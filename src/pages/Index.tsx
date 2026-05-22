@@ -1,10 +1,12 @@
 import { useState } from "react";
 import Icon from "@/components/ui/icon";
+import Trains from "./Trains";
 
-type Section = "dashboard" | "templates" | "history" | "library" | "settings";
+type Section = "dashboard" | "trains" | "templates" | "history" | "library" | "settings";
 
 const NAV_ITEMS = [
   { id: "dashboard" as Section, icon: "LayoutDashboard", label: "Панель управления" },
+  { id: "trains" as Section, icon: "Train", label: "Рейсы" },
   { id: "templates" as Section, icon: "LayoutTemplate", label: "Шаблоны" },
   { id: "history" as Section, icon: "History", label: "История" },
   { id: "library" as Section, icon: "Library", label: "Библиотека" },
@@ -320,6 +322,9 @@ export default function Index() {
           )}
 
           {/* === TEMPLATES === */}
+          {/* === TRAINS === */}
+          {section === "trains" && <Trains />}
+
           {section === "templates" && (
             <div className="space-y-5 animate-fade-in">
               <div className="flex items-center justify-between">
